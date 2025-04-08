@@ -27,3 +27,9 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest discover -s tests -p "test_*.py" > test-report.txt
+        
+    - name: Upload test report
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-report
+        path: test-report.txt
